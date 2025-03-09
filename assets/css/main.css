@@ -3615,10 +3615,3 @@ input, select, textarea {
 		}
 
 
-
-
-#header .icons .icon:before {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}

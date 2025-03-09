@@ -3620,3 +3620,7 @@ input, select, textarea {
 	 border-bottom: none;
     text-decoration: none;
 }
+
+a:focus {
+    outline: none;
+}

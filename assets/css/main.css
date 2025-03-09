@@ -3621,6 +3621,7 @@ input, select, textarea {
     text-decoration: none;
 }
 
-a:focus {
+a:focus, a:active {
     outline: none;
+    border: none;
 }

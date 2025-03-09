@@ -2283,14 +2283,6 @@ input, select, textarea {
 			float: right;
 		}
 
-#header .icons .icon {
-  display: inline-block;
-  width: auto;       /* Ensure width isn't constrained */
-  height: auto;      /* Ensure height isn't constrained */
-  visibility: visible;
-  opacity: 1;
-  font-size: 1rem;   /* Or whatever size you want */
-}
 
 
 /* Image */

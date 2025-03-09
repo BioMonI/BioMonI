@@ -3227,8 +3227,8 @@ input, select, textarea {
 						color: #aaaaaa;
 						overflow: hidden;
 						position: relative;
-						text-indent: 4em;
-						width: 4em;
+						text-indent: 0;
+						width: auto;
 					}
 
 						#header .main ul li > a:before {

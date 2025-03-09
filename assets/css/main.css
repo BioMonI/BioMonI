@@ -2246,6 +2246,8 @@ input, select, textarea {
 		text-decoration: none;
 		border-bottom: none;
 		position: relative;
+		font-size: 1rem;  
+
 	}
 
 		.icon:before {
@@ -2280,6 +2282,16 @@ input, select, textarea {
 		.icon.suffix:before {
 			float: right;
 		}
+
+#header .icons .icon {
+  display: inline-block;
+  width: auto;       /* Ensure width isn't constrained */
+  height: auto;      /* Ensure height isn't constrained */
+  visibility: visible;
+  opacity: 1;
+  font-size: 1rem;   /* Or whatever size you want */
+}
+
 
 /* Image */
 
@@ -2529,9 +2541,7 @@ input, select, textarea {
 	ul.icons {
 		cursor: default;
 		list-style: none;
-		padding-left: 0;
-		font-size: 1rem;  
-		
+		padding-left: 0;		
 	}
 
 		ul.icons li {
@@ -2550,15 +2560,6 @@ input, select, textarea {
 				ul.icons li > * .label {
 					display: none;
 				}
-
-#header .icons .icon {
-  display: inline-block;
-  width: auto;       /* Ensure width isn't constrained */
-  height: auto;      /* Ensure height isn't constrained */
-  visibility: visible;
-  opacity: 1;
-  font-size: 1rem;   /* Or whatever size you want */
-}
 
 /* Posts */
 

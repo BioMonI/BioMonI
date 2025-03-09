@@ -3610,13 +3610,3 @@ input, select, textarea {
 
 		}
 
-
-
-/* Icons - this needs fixing as it is not working properly. possibly an issue with fa version or with class in CSS*/
-
-.fa {
-    font-size: 5em; /* Adjust size (1.5x default) */
-	margin: 0 10px; /* Adds space on both sides */
-	 border-bottom: none;
-    text-decoration: none;
-}

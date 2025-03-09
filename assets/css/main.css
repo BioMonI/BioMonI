@@ -2530,6 +2530,8 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		font-size: 1rem;  
+		
 	}
 
 		ul.icons li {
@@ -2548,6 +2550,15 @@ input, select, textarea {
 				ul.icons li > * .label {
 					display: none;
 				}
+
+#header .icons .icon {
+  display: inline-block;
+  width: auto;       /* Ensure width isn't constrained */
+  height: auto;      /* Ensure height isn't constrained */
+  visibility: visible;
+  opacity: 1;
+  font-size: 1rem;   /* Or whatever size you want */
+}
 
 /* Posts */
 

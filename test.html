@@ -259,7 +259,46 @@
 											<a href="single.html" class="image"><img src="images/Team_BioMonI.jpg" alt="" /></a>
 										</article>
 								</div>
+
+									  <!-- Pagination -->
+ 									  <div class="pagination">
+ 										   <a href="#">« Previous</a>
+ 										   <a href="#">1</a>
+ 										   <a href="#">2</a>
+ 										   <a href="#">3</a>
+ 										   <a href="#">Next »</a>
+										  </div>
 							</section>
+				<script>
+let currentPage = 1;
+const postsPerPage = 4;
+
+function paginate(page) {
+  const posts = document.querySelectorAll(".mini-post");
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  if (page === "next" && currentPage < totalPages) {
+    currentPage++;
+  } else if (page === "prev" && currentPage > 1) {
+    currentPage--;
+  } else if (typeof page === "number") {
+    currentPage = page;
+  }
+
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+
+  posts.forEach((post, index) => {
+    if (index >= startIndex && index < endIndex) {
+      post.style.display = "block"; // Show post
+    } else {
+      post.style.display = "none"; // Hide post
+    }
+  });
+}
+
+paginate(currentPage); // Initialize the pagination
+</script>
 						
 						
 						<!-- Posts List -->

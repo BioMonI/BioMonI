@@ -262,32 +262,40 @@
 
 									  <!-- Pagination -->
  									  <div class="pagination">
-										  <a href="#" class="button">1</a>
-										  <a href="#" class="button">2</a>
-										  <a href="#" class="button">3</a>
-										  <a class="button">...</a>
-										  <a href="#" class="button">Last</a>
-										  </div>
+										  <a href="#" class="button" onclick="paginate(1)">1</a>
+										  <a href="#" class="button" onclick="paginate(2)">2</a>
+										  <a href="#" class="button" onclick="paginate(3)">3</a>
+										  <a href="#" class="button" onclick="paginate('next')">...</a>
+										  <a href="#" class="button" onclick="paginate(totalPages)">Last</a>
+									  </div>
 							</section>
-				<script>
+		<script>
+// Global variables
 let currentPage = 1;
 const postsPerPage = 4;
+const posts = document.querySelectorAll(".mini-post");
+const totalPages = Math.ceil(posts.length / postsPerPage);
 
+// Function to handle pagination
 function paginate(page) {
-  const posts = document.querySelectorAll(".mini-post");
-  const totalPages = Math.ceil(posts.length / postsPerPage);
-
+  // If page is 'next', increase the page number
   if (page === "next" && currentPage < totalPages) {
     currentPage++;
-  } else if (page === "prev" && currentPage > 1) {
+  }
+  // If page is 'prev', decrease the page number
+  else if (page === "prev" && currentPage > 1) {
     currentPage--;
-  } else if (typeof page === "number") {
+  }
+  // If page is a number, update the page to that number
+  else if (typeof page === "number") {
     currentPage = page;
   }
 
+  // Calculate the start and end indexes for posts to show
   const startIndex = (currentPage - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;
 
+  // Hide all posts
   posts.forEach((post, index) => {
     if (index >= startIndex && index < endIndex) {
       post.style.display = "block"; // Show post
@@ -295,9 +303,28 @@ function paginate(page) {
       post.style.display = "none"; // Hide post
     }
   });
+  
+  // Update pagination buttons (e.g., enable/disable next/prev)
+  updatePagination();
 }
 
-paginate(currentPage); // Initialize the pagination
+// Function to update the pagination buttons
+function updatePagination() {
+  // Enable/Disable buttons based on the current page
+  const firstPageButton = document.querySelector('.pagination .button:nth-child(1)');
+  const secondPageButton = document.querySelector('.pagination .button:nth-child(2)');
+  const thirdPageButton = document.querySelector('.pagination .button:nth-child(3)');
+  const lastPageButton = document.querySelector('.pagination .button:nth-child(5)');
+
+  // Disable or enable buttons based on the page
+  firstPageButton.disabled = currentPage === 1;
+  secondPageButton.disabled = currentPage === 2;
+  thirdPageButton.disabled = currentPage === 3;
+  lastPageButton.disabled = currentPage === totalPages;
+}
+
+// Initialize the pagination
+paginate(currentPage);
 </script>
 						
 						
